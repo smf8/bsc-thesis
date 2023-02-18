@@ -57,8 +57,10 @@
 \usepackage{makeidx,multicol,multirow}
 \setlength{\columnsep}{1.5cm}
 
-% \usepackage[round]{natbib}
-% \bibliographystyle{plainnat}
+
+%\usepackage[style=plain-fa]{biblatex}
+%\usepackage[round]{natbib}
+%\bibliographystyle{plain-fa}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{verbatim}
@@ -68,6 +70,7 @@
 \usepackage{array}% for extended column definitions 
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{P}[1]{>{\endgraf\vspace*{-\baselineskip}}C{#1}}
 % فراخوانی بسته زی‌پرشین و تعریف قلم فارسی و انگلیسی
 \usepackage{xepersian}%[extrafootnotefeatures]
 \SepMark{-}
