@@ -1,0 +1,26 @@
+diagrams are created by: https://sequencediagram.org/
+
+title Create VM
+
+Alice->API Gateway: Create VM for User X
+API Gateway->Ghofl: Authorize
+Ghofl-->API Gateway: OK + Headers
+API Gateway->Baaje: Create VM for User X
+Baaje->Nazem: Can user X create this VM?
+Nazem-->Baaje:Validate result OK
+Baaje->Khadem: Create VM in vCloud
+Khadem->vCloud: Create VM in VApp
+Khadem-->Baaje: VM create response
+Baaje-->Alice: VM Created
+vCloud-->Khadem: VM Create Specs
+Khadem-->Baaje: Update VM Status
+Khadem-->Nazem: Update User Quota
+
+
+title User usage check
+
+Alice->API Gateway:Get Usage with JWT Token
+API Gateway->Ghofl: Authorize
+Ghofl-->API Gateway: OK + Headers
+API Gateway ->Nazem: Check Usage + UserID 
+Alice<--Nazem :Usage details for Alice
